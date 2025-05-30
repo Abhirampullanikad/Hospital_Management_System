@@ -1,0 +1,15 @@
+{% extends 'patient/patient_base.html' %}
+{% block content %}
+<div class="container" style="max-width: 600px; margin: 50px auto;">
+  <div class="card p-4 shadow">
+    <h3 class="text-center mb-3">Confirm Your Payment</h3>
+    <p><strong>Patient:</strong> {{ patient.get_name }}</p>
+    <p><strong>Total Amount:</strong> ₹{{ total }}</p>
+
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-success w-100 mt-3">Proceed to Payment</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

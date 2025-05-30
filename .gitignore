@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django cache and database
+*.sqlite3
+*.log
+
+# Environment variables
+.env
+
+# Virtual environment
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# VSCode settings (optional)
+.vscode/
+
+# Mac & Windows system files
+.DS_Store
+Thumbs.db
+
+# Static and media (optional - if generated automatically)
+staticfiles/
+media/
+
+# Python packaging
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Pytest / test output
+htmlcov/
+.coverage
+.tox/
+.nox/
+.cache/
+pytest_cache/
+
+# Node modules (if using JS tools)
+node_modules/

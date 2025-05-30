@@ -1,0 +1,47 @@
+{% extends 'doctor/doctor_base.html' %}
+{% load static %}
+{% block content %}
+{% include 'doctor/doctor_dashboard_cards.html' %}
+<br><br>
+
+<div class="container" style="max-width: 95%; padding-left: 5px; padding-right: 5px;">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center">
+          <h6 class="panel-title">Recent Appointments For You</h6>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover table-striped" id="dev-table" style="margin-bottom: 0;">
+            <thead>
+              <tr>
+                <th>Patient Name</th>
+                <th>Picture</th>
+                <th>Description</th>
+                <th>Mobile</th>
+                <th>Address</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for a, p in appointments %}
+              <tr>
+                <td>{{ a.patientName }}</td>
+                <td>
+                  <img src="{{ p.profile_pic.url }}" alt="Profile Pic" height="40" width="40" style="border-radius: 50%; object-fit: cover;">
+                </td>
+                <td>{{ a.description }}</td>
+                <td>{{ p.mobile }}</td>
+                <td>{{ p.address }}</td>
+                <td>{{ a.appointmentDate }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

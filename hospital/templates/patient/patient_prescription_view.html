@@ -1,0 +1,102 @@
+{% extends 'patient/patient_base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-4">
+
+  <div class="card shadow">
+    <div class="card-header bg-warning">
+      <h5 class="mb-0">
+        <i class="fas fa-prescription me-2"></i> Your Prescriptions
+      </h5>
+    </div>
+    
+    <div class="card-body">
+      {% if prescriptions %}
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="table-light">
+            <tr>
+              <th>Date</th>
+              <th>Doctor</th>
+              <th>Prescription</th>
+              <th>Status</th>
+              <th>Download</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for prescription in prescriptions %}
+            <tr>
+              <td>{{ prescription.date|date:"M d, Y" }}</td>
+              <td>Dr. {{ prescription.doctorName }}</td>
+              <td>
+                <div class="prescription-preview">
+                  {{ prescription.prescription|truncatechars:60 }}
+                </div>
+              </td>
+              <td>
+                {% if prescription.status %}
+                  <span class="badge bg-success">Fulfilled</span>
+                {% else %}
+                  <span class="badge bg-warning">Pending</span>
+                {% endif %}
+              </td>
+              <td>
+              {% if prescription.id %}
+                 <a href="{% url 'download-prescription' prescription.id %}" 
+                   class="btn btn-success btn-sm" title="Download PDF">
+                 <i class="glyphicon glyphicon-download"></i> PDF
+                 </a>
+              {% else %}
+                 <span class="text-danger">Invalid prescription</span>
+              {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <div class="text-center py-4">
+        <i class="fas fa-file-medical fa-3x text-muted mb-3"></i>
+        <h5>No Prescriptions Found</h5>
+        <p class="text-muted">Your prescriptions will appear here after your doctor creates them</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+
+<br><br><br><br>
+
+<style>
+  .card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .prescription-preview {
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+  }
+  
+  .badge {
+    font-size: 0.9em;
+    padding: 0.5em 0.75em;
+  }
+</style>
+{% endblock content %}

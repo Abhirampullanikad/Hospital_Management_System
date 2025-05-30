@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Patient Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+  <style>
+    body {
+      background-color: #f0f4f7;
+      overflow-x: hidden;
+    }
+
+    .note {
+      text-align: center;
+      background: linear-gradient(to right, #0072ff, #8811c5);
+      color: white;
+      font-size: 1.5rem;
+      line-height: 80px;
+      height: 80px;
+      border-radius: 5px 5px 0 0;
+      margin-top: 80px;
+    }
+
+    .register-form {
+      background-color: white;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      padding: 30px 40px;
+      margin-bottom: 50px;
+    }
+
+    .form-control {
+      border-radius: 0.75rem;
+    }
+
+    .btnSubmit {
+      width: 100%;
+      padding: 12px;
+      border-radius: 0.75rem;
+      background-color: #0072ff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btnSubmit:hover {
+      background-color: #005fcc;
+    }
+
+    h5.section-title {
+      margin-bottom: 20px;
+      color: #444;
+      border-bottom: 2px solid #0072ff;
+      padding-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  {% include "hospital/navbar.html" %}
+
+  <div class="container">
+    <div class="note">Register as Patient</div>
+
+    <form method="POST" enctype="multipart/form-data" class="register-form">
+      {% csrf_token %}
+
+      <div class="row">
+        <!-- User Info Section -->
+        <div class="col-md-6">
+          <h5 class="section-title">User Information</h5>
+          {% for field in userForm %}
+            <div class="form-group">
+              {{ field.label_tag }}
+              {{ field }}
+              {% if field.help_text %}
+                <small class="form-text text-muted">{{ field.help_text }}</small>
+              {% endif %}
+              {% for error in field.errors %}
+                <div class="text-danger">{{ error }}</div>
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- Patient Info Section -->
+        <div class="col-md-6">
+          <h5 class="section-title">Patient Details</h5>
+          {% for field in patientForm %}
+            <div class="form-group">
+              {{ field.label_tag }}
+              {{ field }}
+              {% if field.help_text %}
+                <small class="form-text text-muted">{{ field.help_text }}</small>
+              {% endif %}
+              {% for error in field.errors %}
+                <div class="text-danger">{{ error }}</div>
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <button type="submit" class="btnSubmit mt-3">Register</button>
+
+      <div class="text-center mt-3">
+        Already have an account? <a href="{% url 'patientlogin' %}">Login here</a>
+      </div>
+    </form>
+  </div>
+
+  {% include "hospital/footer.html" %}
+
+</body>
+</html>

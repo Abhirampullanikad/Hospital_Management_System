@@ -1,0 +1,108 @@
+{% extends 'hospital/admin_base.html' %}
+
+{% block content %}
+
+<head>
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+      height: 80px;
+      background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+    }
+
+    .form-content {
+      padding: 5%;
+      border: 1px solid #ced4da;
+      margin-bottom: 2%;
+    }
+
+    .form-control {
+      border-radius: 1.5rem;
+    }
+
+    .btnSubmit {
+      border: none;
+      border-radius: 1.5rem;
+      padding: 1%;
+      width: 20%;
+      cursor: pointer;
+      background: #0062cc;
+      color: #fff;
+    }
+
+    .menu {
+      top: 50px;
+    }
+  </style>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<br><br>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container register-form">
+    <div class="form">
+      <div class="note">
+        <p>Update Doctor Details</p>
+      </div>
+      <div class="form-content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+                {{userForm.first_name.label_tag}}
+                {{userForm.first_name}}
+            </div>
+            <div class="form-group">
+                {{userForm.username.label_tag}}
+                {{userForm.username}}
+            </div>
+            <div class="form-group">
+                {{patientForm.address.label_tag}}
+                {{patientForm.address}}
+            </div>
+            <div class="form-group">
+                {{patientForm.symptoms.label_tag}}
+                {{patientForm.symptoms}}
+            </div>
+            <div class="form-group">
+                {{patientForm.profile_pic.label_tag}}
+                {{patientForm.profile_pic}}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+                {{userForm.last_name.label_tag}}
+                {{userForm.last_name}}
+            </div>
+            <div class="form-group">
+                {{userForm.password.label_tag}}
+                {{userForm.password}}
+            </div>
+            <div class="form-group">
+                {{patientForm.mobile.label_tag}}
+                {{patientForm.mobile}}
+            </div>
+            <div class="form-group">
+                {{patientForm.assignedDoctorId.label_tag}}
+                {{patientForm.assignedDoctorId}}
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btnSubmit">Update</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+{% endblock content %}

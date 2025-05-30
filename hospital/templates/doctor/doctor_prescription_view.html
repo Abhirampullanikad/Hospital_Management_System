@@ -1,0 +1,44 @@
+{% extends 'doctor/doctor_base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="container">
+  <h2 class="my-4">Create Prescription</h2>
+  
+  <form method="post">
+    {% csrf_token %}
+    
+    <div class="form-group mb-3">
+      <label class="form-label">Select Patient</label>
+      <select name="patientId" class="form-select" required>
+        <option value="">-- Select Patient --</option>
+        {% for patient in patients %}
+          {% if request.GET.patient_id and patient.user.id == request.GET.patient_id|add:"0" %}
+            <option value="{{ patient.user.id }}" selected>
+              {{ patient.get_name }} ({{ patient.symptoms }})
+            </option>
+          {% else %}
+            <option value="{{ patient.user.id }}">
+              {{ patient.get_name }} ({{ patient.symptoms }})
+            </option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    </div>
+    
+    <div class="form-group mb-3">
+      <label class="form-label">Prescription Details</label>
+      {{ prescriptionform.prescription }}
+    </div>
+    
+    <button type="submit" class="btn btn-primary mt-3">Save Prescription</button>
+    <a href="{% url 'doctor-view-patient' %}" class="btn btn-secondary mt-3">Cancel</a>
+  </form>
+</div>
+
+<style>
+  textarea.form-control {
+    min-height: 150px;
+  }
+</style>
+{% endblock %}
