@@ -135,8 +135,10 @@ Edit
 
 ---
 
-🚀 Django Deployment on AWS EC2 (Ubuntu)
-🌐 Live Site Example: http://54.175.74.173
+##🚀 Django Deployment on AWS EC2 (Ubuntu)
+
+##🌐 Live Site Example: http://54.175.74.173
+
 ✅ Prerequisites
 EC2 Ubuntu instance running
 
