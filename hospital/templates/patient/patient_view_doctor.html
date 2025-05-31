@@ -25,6 +25,7 @@
 <div class="container">
 
     <form  action="/searchdoctor" method="get" style="margin-left:70%;" class="form-inline my-2 my-lg-0">
+       {% csrf_token %}
       <input class="form-control mr-sm-2" type="search" placeholder="Search" name="query" id="query" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0 mb-1" type="submit">Search</button>
     </form>
