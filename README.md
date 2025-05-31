@@ -15,7 +15,7 @@
 
 ---
 
-## ✨ Overview
+✨ Overview
 
 🚀 **Hospital Management System** is a robust, responsive web app designed to handle the administrative tasks of a hospital through 3 major user roles:
 
@@ -27,7 +27,7 @@
 
 ---
 
-## 🧩 Key Features
+🧩 Key Features
 
 - 🔐 Secure role-based login & dashboards
 - 📅 Appointment scheduling & tracking
@@ -38,7 +38,7 @@
 
 ---
 
-## 🔐 Demo Credentials
+🔐 Demo Credentials
 
 | Role     | Username | Password   |
 |----------|----------|------------|
@@ -48,7 +48,7 @@
 
 ---
 
-## 🛠️ Tech Stack
+🛠️ Tech Stack
 
 | Layer         | Tech                                                                 |
 |---------------|----------------------------------------------------------------------|
@@ -60,7 +60,7 @@
 
 ---
 
-## 📦 Project Structure
+📦 Project Structure
 
 ```bash
 hospital/
@@ -100,13 +100,13 @@ python manage.py migrate
 python manage.py runserver
 🔗 Visit: http://127.0.0.1:8000
 ```
-##☁️ Deployment on AWS EC2
+☁️ Deployment on AWS EC2
 ✅ The app is live at: http://54.175.74.173
 Deployed using Ubuntu, served with Gunicorn and optionally reverse-proxied via Nginx.
 
 Want a guide on how to deploy this on EC2? Just ask! 🧑‍💻
 
-##🎯 Future Enhancements
+🎯 Future Enhancements
 📧 Email/SMS notifications
 
 📄 Medical records upload/download
@@ -115,7 +115,7 @@ Want a guide on how to deploy this on EC2? Just ask! 🧑‍💻
 
 
 
-##🙋‍♂️ Author
+🙋‍♂️ Author
 Built with ❤️ by Abhiram
 
 🔗 Linkdin: www.linkedin.com/in/abhiram-p-29369b314
@@ -133,7 +133,7 @@ Edit
 
 ---
 
-##🚀 Django Deployment on AWS EC2 (Ubuntu)
+🚀 Django Deployment on AWS EC2 (Ubuntu)
 🌐 Live Site Example: http://54.175.74.173
 ✅ Prerequisites
 EC2 Ubuntu instance running
@@ -259,10 +259,10 @@ Your Django app should now be live at:
 
 🧼 Bonus: Useful Commands
 
-# Restart services
+Restart services
 sudo systemctl restart gunicorn
 sudo systemctl restart nginx
 
-# View logs
+View logs
 sudo journalctl -u gunicorn
 sudo tail -f /var/log/nginx/error.log
