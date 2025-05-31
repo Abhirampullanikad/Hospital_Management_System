@@ -273,3 +273,35 @@ sudo systemctl restart nginx
 View logs
 sudo journalctl -u gunicorn
 sudo tail -f /var/log/nginx/error.log
+
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Screenshot 2025-06-01 013149](https://github.com/user-attachments/assets/a7d11a6f-34a9-4bd0-a2e0-b089da9e6bab)
+
+![Screenshot 2025-06-01 013204](https://github.com/user-attachments/assets/26b2d328-72ae-4954-ad77-2d732d7b4fa7)
+
+
+
+### 🔐 Login Page
+![Screenshot 2025-06-01 013213](https://github.com/user-attachments/assets/d0fc6311-73ae-44ea-ae44-ea285fc7cbe0)
+
+
+### 👑 Admin Dashboard
+![Screenshot 2025-06-01 013239](https://github.com/user-attachments/assets/48da5aca-1460-4b8c-9598-65fefa749ebd)
+
+![Screenshot 2025-06-01 013254](https://github.com/user-attachments/assets/8be65435-6411-4b43-bec8-77325fc5876d)
+
+
+### 🩺 Doctor Dashboard
+![Screenshot 2025-06-01 013817](https://github.com/user-attachments/assets/6d50fb35-9187-4652-ae6b-afbaf7a1ce78)
+
+![Screenshot 2025-06-01 013806](https://github.com/user-attachments/assets/a6822fcf-1019-46bb-8a0d-9113cd1864a7)
+
+
+### 👤 Patient Dashboard
+![Screenshot 2025-06-01 013635](https://github.com/user-attachments/assets/03229171-4d87-477c-bb0e-fb1dbc2a4462)
+
+
