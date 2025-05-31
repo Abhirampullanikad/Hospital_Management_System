@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/Framework-Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
   <img src="https://img.shields.io/badge/Cloud-AWS_EC2-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white" />
   <img src="https://img.shields.io/badge/Frontend-Bootstrap_5-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" />
-  <img src="https://img.shields.io/badge/Database-SQLite/PostgreSQL-blue?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Database-SQLite-blue?style=for-the-badge&logo=postgresql&logoColor=white" />
 </p>
 
 ---
@@ -19,11 +19,11 @@
 
 🚀 **Hospital Management System** is a robust, responsive web app designed to handle the administrative tasks of a hospital through 3 major user roles:
 
-- 👑 **Admin** – Manages doctors, patients, appointments & departments
-- 🩺 **Doctor** – Views schedule, patient history, and updates records
-- 👤 **Patient** – Books appointments, views status & history
+- 👑 **Admin** – Manages doctors, patients, appointments & departments,Generate Bill
+- 🩺 **Doctor** – Views schedule, patient history, and updates records,Generate prescription
+- 👤 **Patient** – Books appointments, views status & history, Download Bill in PDF format, Pay bill, Download prescription
 
-🎯 Built with **Django**, styled using **Bootstrap 5**, and deployed on **AWS EC2** for high availability and performance.
+🎯 Built with **Django**, styled using **Bootstrap 5** **HTML** **CSS**, and deployed on **AWS EC2** for high availability and performance.
 
 ---
 
@@ -42,7 +42,7 @@
 
 | Role     | Username | Password   |
 |----------|----------|------------|
-| 👑 Admin | admin    | admin123   |
+| 👑 Admin | admin1    | abhi6282413470   |
 | 🩺 Doctor | doc1     | docpass    |
 | 👤 Patient | pat1     | patpass    |
 
