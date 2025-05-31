@@ -101,12 +101,14 @@ python manage.py runserver
 🔗 Visit: http://127.0.0.1:8000
 ```
 ☁️ Deployment on AWS EC2
+
 ✅ The app is live at: http://54.175.74.173
 Deployed using Ubuntu, served with Gunicorn and optionally reverse-proxied via Nginx.
 
 Want a guide on how to deploy this on EC2? Just ask! 🧑‍💻
 
 🎯 Future Enhancements
+
 📧 Email/SMS notifications
 
 📄 Medical records upload/download
