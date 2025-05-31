@@ -135,9 +135,9 @@ Edit
 
 ---
 
-##🚀 Django Deployment on AWS EC2 (Ubuntu)
+🚀 Django Deployment on AWS EC2 (Ubuntu)
 
-##🌐 Live Site Example: http://54.175.74.173
+🌐 Live Site Example: http://54.175.74.173
 
 ✅ Prerequisites
 EC2 Ubuntu instance running
@@ -151,9 +151,7 @@ Domain (optional)
 Ports 22 (SSH), 80 (HTTP) allowed in EC2 security group
 
 📦 Step 1: SSH into EC2
-bash
-Copy
-Edit
+
 ssh -i your-key.pem ubuntu@your-ec2-ip
 
 ⚙️ Step 2: Install System Dependencies
@@ -175,6 +173,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 
 🔐 Step 5: Configure Django for Production
+
 In settings.py:
 DEBUG = False
 ALLOWED_HOSTS = ['54.175.74.173', 'yourdomain.com']
@@ -200,6 +199,7 @@ gunicorn hospital.wsgi:application
 Stop with CTRL+C.
 
 🧱 Step 8: Set Up Gunicorn as a System Service
+
 Create /etc/systemd/system/gunicorn.service:
 
 sudo nano /etc/systemd/system/gunicorn.service
@@ -223,6 +223,7 @@ sudo systemctl start gunicorn
 sudo systemctl enable gunicorn
 
 🌐 Step 9: Configure Nginx
+
 Create a config file:
 
 sudo nano /etc/nginx/sites-available/hospital
@@ -250,6 +251,7 @@ sudo nginx -t
 sudo systemctl restart nginx
 
 🔐 Step 10: Allow Traffic on Port 80
+
 Make sure your EC2 instance’s security group allows Inbound HTTP (port 80).
 
 ✅ Optional: Enable HTTPS with Let’s Encrypt
@@ -259,6 +261,7 @@ sudo certbot --nginx -d yourdomain.com
 🎉 Done!
 
 Your Django app should now be live at:
+
 👉 http://54.175.74.173
 
 🧼 Bonus: Useful Commands
