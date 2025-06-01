@@ -129,9 +129,6 @@ This project is licensed under the MIT License.
 
 ⭐ Star this repository to support the project and follow for updates!
 
-markdown
-Copy
-Edit
 
 ---
 
